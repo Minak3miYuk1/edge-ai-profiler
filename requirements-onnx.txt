@@ -1,0 +1,4 @@
+# Optional only. The default toy-model demonstration has no pip dependencies.
+# Record actual installed versions when doing a research experiment.
+numpy>=1.24,<3
+onnxruntime>=1.17,<2

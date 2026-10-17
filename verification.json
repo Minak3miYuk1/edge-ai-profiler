@@ -1,0 +1,56 @@
+{
+  "verified_at": "2026-10-17T23:36:47.981138+08:00",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "tests": {
+    "run": 9,
+    "passed": 8,
+    "skipped": 1,
+    "log": "test_results.txt"
+  },
+  "portable_demo": {
+    "status": "passed",
+    "command": "python3 main.py --out sample_results",
+    "windows": 20,
+    "transitions": [
+      {
+        "time_s": 6.029192750000001,
+        "from": "basic",
+        "to": "detailed",
+        "reason": "latency_above_threshold"
+      },
+      {
+        "time_s": 13.0523545,
+        "from": "detailed",
+        "to": "basic",
+        "reason": "latency_recovered"
+      }
+    ],
+    "backend": "resource"
+  },
+  "report": {
+    "browser": "Headless Google Chrome",
+    "page_errors": 0,
+    "data_rows": 20,
+    "desktop_horizontal_overflow": false,
+    "mobile_horizontal_overflow": false,
+    "preview": "sample_results/preview.png"
+  },
+  "linux_bcc": {
+    "status": "not_run",
+    "reason": "This host is macOS, not a Linux kernel.",
+    "opt_in_test": "sudo env EDGEPROF_TEST_BCC=1 /usr/bin/python3 -m unittest discover -s tests -v"
+  },
+  "linux_cpu_contention": {
+    "status": "not_run",
+    "reason": "Requires Linux CPU affinity support."
+  },
+  "onnx_model_path": {
+    "status": "not_run",
+    "reason": "No trained ONNX model supplied; default untrained toy MLP was exercised."
+  },
+  "overhead_reduction": {
+    "status": "not_established",
+    "reason": "One resource-backend demo does not establish an eBPF overhead reduction."
+  }
+}

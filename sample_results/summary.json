@@ -1,0 +1,49 @@
+{
+  "backend": "resource",
+  "config": {
+    "backend": "resource",
+    "mode": "adaptive",
+    "duration": 20,
+    "window": 1,
+    "calibration": 2,
+    "slow_start": 4,
+    "slow_duration": 6,
+    "slow_delay_ms": 8,
+    "interference": "delay",
+    "enter_ratio": 1.2,
+    "exit_ratio": 1.1,
+    "min_detailed": 5,
+    "repeats": 16,
+    "onnx": null,
+    "input_shape": null,
+    "out": "sample_results"
+  },
+  "workload": "seeded random-weight toy MLP (untrained)",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "baseline_ms": 0.9355,
+  "measured_seconds": 19.996560337000002,
+  "inferences": 15221,
+  "detailed_duty_percent": 35.11393109947937,
+  "controller_cpu_s": 0.011115,
+  "transitions": [
+    {
+      "time_s": 6.029192750000001,
+      "from": "basic",
+      "to": "detailed",
+      "reason": "latency_above_threshold"
+    },
+    {
+      "time_s": 13.0523545,
+      "from": "detailed",
+      "to": "basic",
+      "reason": "latency_recovered"
+    }
+  ],
+  "notes": [
+    "One demonstration run, not an overhead experiment.",
+    "Resource backend always acquires rusage; detail mode only gates exported switch counters.",
+    "RSS values are peak RSS. BPF kernel memory and CPU are not included in controller usage.",
+    "BPF snapshots are cumulative reads across CPUs, not an atomic scheduler-event boundary."
+  ]
+}
